@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Uvie 💛</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A birthday message full of love for Uvie 💛">
+<style>
+body{margin:0;font-family:Poppins,Arial,sans-serif;background:linear-gradient(180deg,#f6f6f6,#fff);color:#2b2b2b;overflow-x:hidden}
+.container{max-width:900px;margin:auto;padding:60px 20px;text-align:center}
+h1{font-size:2.7rem;margin-bottom:10px}
+h1 span{display:inline-block;opacity:0;transform:translateY(-20px);animation:fadeInUp 1s forwards}
+@keyframes fadeInUp{to{opacity:1;transform:translateY(0)}}
+p{font-size:1.1rem;line-height:1.9;margin:20px 0}
+.card{background:#fff;border-radius:22px;padding:35px;margin-top:40px;box-shadow:0 15px 40px rgba(0,0,0,.06)}
+.music-btn{margin-top:20px;background:#ffeb3b;border:none;padding:12px 22px;border-radius:30px;font-size:1rem;cursor:pointer}
+.heart{position:fixed;bottom:-20px;font-size:22px;animation:floatUp linear infinite;opacity:.7}
+@keyframes floatUp{0%{transform:translateY(0);opacity:0}20%{opacity:.8}100%{transform:translateY(-110vh);opacity:0}}
+</style>
+</head>
+<body>
+<audio id="bgMusic" loop>
+<source src="lover-chorus.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+<h1>
+<span>H</span><span>a</span><span>p</span><span>p</span><span>y</span>
+<span>B</span><span>i</span><span>r</span><span>t</span><span>h</span><span>d</span><span>a</span><span>y</span><br>
+<span>U</span><span>v</span><span>i</span><span>e</span> 💫
+</h1>
+<p>To my favorite person — today is yours.</p>
+<button class="music-btn" onclick="document.getElementById('bgMusic').play()">🎶 Play Music</button>
+
+<div class="card">
+<p>
+Happy Birthday to my favorite person in the whole world 😌.<br><br>
+Thank you for being my safe place, my laughter on hard days, and my favorite human 💛.<br><br>
+Happy birthday, Udoko Uvie 🌚❤️
+</p>
+</div>
+</div>
+
+<script>
+const hearts=["💛","💖","✨","💫","❤️"];
+function createHeart(){
+ const h=document.createElement("div");
+ h.className="heart";
+ h.innerHTML=hearts[Math.floor(Math.random()*hearts.length)];
+ h.style.left=Math.random()*100+"vw";
+ h.style.animationDuration=(6+Math.random()*4)+"s";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),10000);
+}
+setInterval(createHeart,500);
+const letters=document.querySelectorAll("h1 span");
+letters.forEach((l,i)=>l.style.animationDelay=(i*.15)+"s");
+</script>
+</body>
+</html>
